@@ -1,0 +1,14 @@
+/db-data
+/redis-data
+/docker-compose.yml
+/Dockerfile
+/upload/config.php
+/upload/admin/config.php
+/upload/system/library/autoprint/
+/upload/sitemap.xml
+/upload/system/storage/vendor/
+/.idea
+/upload/.idea
+.DS_Store
+/storage
+/upload/system/storage
