@@ -40,10 +40,17 @@ class ControllerExtensionApiV1Orders extends Controller {
 
     private function validateBasicAuth(): bool
     {
-        if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']))
+        if ((!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) && !isset($_SERVER['HTTP_AUTHORIZATION']))
             return false;
 
-        return $_SERVER['PHP_AUTH_USER'] === $this->config->get('feed_api_username') && $_SERVER['PHP_AUTH_PW'] === $this->config->get('feed_api_password');
+
+        if (!isset($_SERVER['HTTP_AUTHORIZATION']))
+            return false;
+
+        $basicAuth = explode(' ', trim($_SERVER['HTTP_AUTHORIZATION']))[1];
+        $systemAuth = base64_encode($this->config->get('feed_api_username').':'.$this->config->get('feed_api_password'));
+
+        return $basicAuth === $systemAuth;
     }
 
     private function validate(): bool
