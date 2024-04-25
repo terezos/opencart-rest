@@ -17,7 +17,7 @@ cp docker-compose.sample.yml docker-compose.yml
 cp Dockerfile.sample Dockerfile
 cp upload/config-dist.php upload/config.php
 cp upload/admin/config-dist.php upload/admin/config.php
-cp .env.example .env
+cp .env.sample .env
 ```
 
 ### Start the Docker services
