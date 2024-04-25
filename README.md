@@ -39,6 +39,7 @@ Password: root
 $ docker exec -it simpler_web bash
 $ cd app
 $ composer install
+$ mkdir storage/cache/
 $ mkdir storage/logs/
 $ touch storage/logs/error.log 
 ```
