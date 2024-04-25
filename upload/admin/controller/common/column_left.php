@@ -171,6 +171,14 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 			}
 
+            if ($this->user->hasPermission('access', 'extension/feed/api')) {
+                $marketplace[] = array(
+                    'name'	   => $this->language->get('text_api'),
+                    'href'     => $this->url->link('extension/feed/api', 'user_token=' . $this->session->data['user_token'], true),
+                    'children' => array()
+                );
+            }
+
 			if ($marketplace) {
 				$data['menus'][] = array(
 					'id'       => 'menu-extension',

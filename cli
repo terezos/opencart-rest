@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+require __DIR__.'/storage/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__) ;
+$dotenv->load();
+
+$orm = new \Helpers\Eloquent();
+$orm->boot();
+
+use Symfony\Component\Console\Application;
+
+$application = new Application('echo', '1.0.0');
+
+$application->add(new \Commands\CreateDummyOrdersCommand());
+try {
+    $application->run();
+} catch (Exception $e) {
+    echo $e->getMessage();
+    die;
+}

@@ -20,6 +20,7 @@ $_['text_design']               = 'Design';
 $_['text_download']             = 'Downloads';
 $_['text_log']                  = 'Error Logs';
 $_['text_event']                = 'Events';
+$_['text_api']                = 'Rest API';
 $_['text_extension']            = 'Extensions';
 $_['text_filter']               = 'Filters';
 $_['text_geo_zone']             = 'Geo Zones';

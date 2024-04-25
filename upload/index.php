@@ -16,4 +16,10 @@ if (!defined('DIR_APPLICATION')) {
 // Startup
 require_once(DIR_SYSTEM . 'startup.php');
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
+$dotenv->load();
+
+$orm = new \Helpers\Eloquent();
+$orm->boot();
+
 start('catalog');
