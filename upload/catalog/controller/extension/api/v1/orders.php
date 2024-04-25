@@ -12,7 +12,7 @@ class ControllerExtensionApiV1Orders extends Controller {
         parent::__construct($registry);
 
         $reqParameters = explode('/', $this->request->get['route']);
-        $this->orderId = (isset($reqParameters[4]) && $reqParameters[4] != '') ? $reqParameters[4] : null;
+        $this->orderId = (isset($reqParameters[4]) && $reqParameters[4] != '') ? (int)$reqParameters[4] : null;
         if (!$this->validate()) {
             header('Content-type: application/json');
             http_response_code($this->statusCode);
