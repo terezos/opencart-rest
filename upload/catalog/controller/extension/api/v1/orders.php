@@ -31,8 +31,8 @@ class ControllerExtensionApiV1Orders extends Controller {
             http_response_code($this->statusCode);
             die(json_encode(['order' => $order_info]));
         } else {
-            http_response_code($this->statusCode);
-            die(json_encode(['error' => 'Order not found']));
+            http_response_code(404);
+            die(json_encode(['error' => 'MISSING_ORDER']));
         }
     }
 
