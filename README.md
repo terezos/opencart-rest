@@ -13,7 +13,7 @@ cd opencart-rest
 
 ### Execute the following commands in your terminal
 ```
-cp docker-compose.sample.yml docker-compose.yml
+cp docker-compose-sample.yml docker-compose.yml
 cp Dockerfile.sample Dockerfile
 cp upload/config-dist.php upload/config.php
 cp upload/admin/config-dist.php upload/admin/config.php
