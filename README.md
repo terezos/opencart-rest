@@ -36,11 +36,11 @@ Password: root
 
 ### Log into server container and execute the following commands 
 ```
-docker exec -it simpler_web bash
-cd app
-composer install
-mkdir storage/logs/
-touch storage/logs/error.log 
+$ docker exec -it simpler_web bash
+$ cd app
+$ composer install
+$ mkdir storage/logs/
+$ touch storage/logs/error.log 
 ```
 
 ### Admin area
@@ -53,10 +53,10 @@ Password: simpler
 ## Rest Api
 ### Where is the extension?
 ```
-On left column on dashboard, under the dropdown of Extensions,
-there is a Link called Rest API.
-You can set there username and password for the Basic Auth.
-Also you can Enable/Disabled the plugin.
+On the left column of the dashboard, within the "Extensions" dropdown menu,
+you will find a link titled "Rest API."
+Here, you have the option to configure the username and password required for Basic Authentication.
+Additionally, you may enable or disable the plugin as necessary..
 ```
 ### Rest Api Documentation
 ```
@@ -74,7 +74,7 @@ Link: [Curl Basic Auth](https://dev.to/lucasg/how-to-use-basic-authentication-wi
 ### How I can create dummy orders?
 ```
 Log into server container again and execute the following commands:
-docker exec -it simpler_web bash
-cd app
-php cli simpler:create-dummy-orders
+$ docker exec -it simpler_web bash
+$ cd app
+$ php cli simpler:create-dummy-orders
 ```
