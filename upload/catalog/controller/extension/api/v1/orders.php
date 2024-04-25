@@ -24,10 +24,8 @@ class ControllerExtensionApiV1Orders extends Controller {
     public function getOrder()
     {
         header('Content-type: application/json');
-
         $this->load->model('checkout/order');
         $order_info = $this->model_checkout_order->getOrderApi($this->orderId);
-
 
         if ($order_info) {
             http_response_code($this->statusCode);
@@ -42,7 +40,6 @@ class ControllerExtensionApiV1Orders extends Controller {
     {
         if ((!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) && !isset($_SERVER['HTTP_AUTHORIZATION']))
             return false;
-
 
         if (!isset($_SERVER['HTTP_AUTHORIZATION']))
             return false;
